@@ -33,10 +33,22 @@ def make_log(message, _time=time.time()):
 
 def write_status(file, batches, batch_size, finished, new=False):
 	with open('status.txt', 'r+') as status:
-		row = int(file[5:9])-2019
+		row = int(file[5:9])-2019+1
 		if new:
+			status.write('OUTCOME(dynamic):\n')
 			status.write('Odata2019File.csv-0-50-0\n')
-			status.write('Odata2020File.csv-0-50-0')
+			status.write('Odata2020File.csv-0-50-0\n')
+			status.write('\n')
+			status.write('EXPECTED RESULT (lines 2, 3):\n')
+			status.write('Odata2019File.csv-7076-50-1\n')
+			status.write('Odata2020File.csv-7585-50-1\n')
+			status.write('\n')
+			status.write('STARTING VALUES (lines 2, 3):\n')
+			status.write('Odata2019File.csv-0-50-0\n')
+			status.write('Odata2020File.csv-0-50-0\n')
+			status.write('\n')
+			status.write('FORMAT:\n')
+			status.write('file name - exported batches - batch size - finished(int(bool))')
 		else:
 			lines = status.read().rstrip('\n').split('\n')
 			lines[row] = f'{file}-{batches}-{batch_size}-{int(finished)}\n'
@@ -112,6 +124,7 @@ def populate_table(file, table='zno_opendata'):
 				n = 0
 
 				with open('status.txt', 'r') as status:
+					status.readline()
 					f, bt, bs, fin = status.readline().split('-')
 					while f!=file:
 						f, bt, bs, fin = status.readline().split('-')

@@ -1,11 +1,12 @@
-Odata2019File.csv-0-50-0
-Odata2020File.csv-0-50-0
-
-EXPECTED RESULT:
+OUTCOME(dynamic):
 Odata2019File.csv-7076-50-1
 Odata2020File.csv-7585-50-1
 
-SETTINGS TO EXPORT EVERYTHING:
+EXPECTED RESULT (lines 2, 3):
+Odata2019File.csv-7076-50-1
+Odata2020File.csv-7585-50-1
+
+STARTING VALUES (lines 2, 3):
 Odata2019File.csv-0-50-0
 Odata2020File.csv-0-50-0
 
