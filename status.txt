@@ -1,2 +1,13 @@
+Odata2019File.csv-0-50-0
+Odata2020File.csv-0-50-0
+
+EXPECTED RESULT:
 Odata2019File.csv-7076-50-1
 Odata2020File.csv-7585-50-1
+
+SETTINGS TO EXPORT EVERYTHING:
+Odata2019File.csv-0-50-0
+Odata2020File.csv-0-50-0
+
+FORMAT:
+file name - exported batches - batch size - finished(int(bool))
