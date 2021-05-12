@@ -206,7 +206,7 @@ def select_table(mark_type, subject, table='zno_opendata'):
 
 		with open(f'{mark_type}-{subject}.csv', 'w', encoding="utf-8") as result_csvfile:
 			csv_writer = csv.writer(result_csvfile)
-			csv_writer.writerow(['Область', 'Рік', 'Середній бал з Історії України'])
+			csv_writer.writerow(['region', 'year', f'{mark_type} mark from {subject}'])
 			for k in result:
 				row = [k["_id"]["region"],str(k["_id"]["year"]),str(k["avg"])]
 				csv_writer.writerow(row)
