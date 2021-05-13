@@ -208,7 +208,7 @@ def select_table(mark_type, subject, table='zno_opendata'):
 			csv_writer = csv.writer(result_csvfile)
 			csv_writer.writerow(['region', 'year', f'{mark_type} mark from {subject}'])
 			for k in result:
-				row = [k["_id"]["region"],str(k["_id"]["year"]),str(k["avg"])]
+				row = [k["_id"]["region"],str(k["_id"]["year"]),str(k[mark_type])]
 				csv_writer.writerow(row)
 			make_log(f'SELECTED: {mark_type} mark from {subject}')
 	except Exception as e:
